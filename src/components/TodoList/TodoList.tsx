@@ -4,21 +4,21 @@ import "./TodoList.css";
 
 const TodoList = () => {
     const [task, setTask] = useState<string>("");
-    const [todos, setTodos] = useState<{ text: string; completed: boolean }[]>([]);
+    const [toDos, setToDos] = useState<{ text: string; completed: boolean }[]>([]);
 
     const addTask = () => {
         if (task.trim()) {
-            setTodos([...todos, { text: task, completed: false }]);
+            setToDos([...toDos, { text: task, completed: false }]);
             setTask("");
         }
     };
 
     const toggleComplete = (index: number) => {
-        setTodos(todos.map((todo, i) => (i === index ? { ...todo, completed: !todo.completed } : todo)));
+        setToDos(toDos.map((todo, i) => (i === index ? { ...todo, completed: !todo.completed } : todo)));
     };
 
     const deleteTask = (index: number) => {
-        setTodos(todos.filter((_, i) => i !== index));
+        setToDos(toDos.filter((_, i) => i !== index));
     };
 
     return (
@@ -35,7 +35,7 @@ const TodoList = () => {
                 <i className="fas fa-plus" onClick={addTask}></i>
             </div>
             <div className="todos">
-                {todos.map((todo, index) => (
+                {toDos.map((todo, index) => (
                     <List
                         key={index}
                         data={todo}
