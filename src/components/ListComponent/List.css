@@ -1,0 +1,24 @@
+.list {
+    margin-top: 0.8em;
+    width: 20em;
+    height: 2em;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    padding: 5px;
+}
+.list .left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list .left p {
+    margin-left: 3px;
+    font-size: medium;
+    font-weight: 700;
+    font-style: normal;
+    color: grey;
+}
